@@ -1,14 +1,26 @@
 <h1>Books</h1>
-<% @books.each do |books| %>
+<% @books.each do |book| %>
 
 <div class = "books-index">
-  <p class = "books-content">Title</p>
-  <%= book.title %>
 
-  <p class = "books-content">Body</p>
-  <% %>
+ <div class = "book-table, table-title">
+  <div class = "books-content">Title</div>
+  <div class = "books-content">Body</div>
+  <div class = "books-content"></div>
+ </div>
+
+ <div class = "book-table">
+   <div class = "book-content"><%= book.title %></div>
+   <div class = "book-content"><%= book.body %></div>
+
+   <div class = "book-content">
+    <p><%= link_to "Show", show_book_path(book.id) %></p>
+    <p><%= link_to "Edit", edit_book_path(book.id) %></p>
+    <p><%= link_to "Destroy", destroy_book_path(book.id), method: :delete, "data-confirm" => "Are you sure ?" %></p>
+   </div>
+ </div>
 </div>
 
-
-
+<%= render 'layouts/error_messages' %>
+<%= render 'new' %>
 <% end %>

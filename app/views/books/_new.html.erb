@@ -1,5 +1,8 @@
 <h1>New book</h1>
-<%= form_with model: @book, local:true do |f| %>
+
+<%= render 'layouts/error_messages', model: f.object %>
+
+<%= form_with model: book,url: book_path,  method: :post, local:true do |f| %>
 
  <h4 class = "book-new-comment">Title</h4>
  <%= f.text_field :title %>
@@ -7,5 +10,8 @@
  <h4 class = "book-new-comment">Body</h4>
  <%= f.text_area :body %>
 
+<span class = "book-btn, book-new-btn">
  <%= f.submit 'Create Book' %>
+</span>
+
 <% end %>
