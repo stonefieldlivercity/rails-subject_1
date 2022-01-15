@@ -1,17 +1,16 @@
-<h1>New book</h1>
+<div class = "book-new-content">
+ <h1>New book</h1>
+ <%= form_with model: book, url: book_path,  method: :post, local:true do |f| %>
+ <%= render 'layouts/error_messages', book: book %>
 
-<%= render 'layouts/error_messages', model: f.object %>
+  <h5>Title</h5>
+   <%= f.text_field :title %>
 
-<%= form_with model: book,url: book_path,  method: :post, local:true do |f| %>
+  <h5>Body</h5>
+   <%= f.text_area :body %>
 
- <h4 class = "book-new-comment">Title</h4>
- <%= f.text_field :title %>
-
- <h4 class = "book-new-comment">Body</h4>
- <%= f.text_area :body %>
-
-<span class = "book-btn, book-new-btn">
- <%= f.submit 'Create Book' %>
-</span>
-
-<% end %>
+ <span class = "book-btn">
+  <%= f.submit 'Create Book' %>
+ </span>
+ <% end %>
+</div>
