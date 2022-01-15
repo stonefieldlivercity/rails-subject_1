@@ -1,6 +1,6 @@
 <h1>Editing Book</h1>
 
-<%= form_with model: @book, url: update_book_path(@book.id), method: :patch, local:true do |f| %>
+<%= form_with model: @book, url: book_path(@book.id), method: :patch, local:true do |f| %>
 <%= render 'layouts/error_messages', book: @book %>
  <div class = "edit-book">
   <h4>Title</h4>
@@ -13,7 +13,7 @@
  </div>
 <% end %>
   <div class = "index-btn">
-   <p><%= link_to "show", show_book_path %></p>
+   <p><%= link_to "Show", book_path(@book) %></p>
     <p> | </p>
-   <p><%= link_to "back", book_path %></p>
+   <p><%= link_to "Back", books_path %></p>
   </div>

@@ -1,6 +1,6 @@
 <div class = "book-new-content">
  <h1>New book</h1>
- <%= form_with model: book, url: book_path,  method: :post, local:true do |f| %>
+ <%= form_with model: book, url: books_path,  method: :post, local:true do |f| %>
  <%= render 'layouts/error_messages', book: book %>
 
   <h5>Title</h5>
